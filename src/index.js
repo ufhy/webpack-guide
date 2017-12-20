@@ -3,14 +3,16 @@ import './style.css';
 import Icon from './icon.png';
 import Data from './data.xml';
 import printMe from './print.js';
+import { cube } from './math.js';
 
 function component() {
-  var element = document.createElement('div');
+  var element = document.createElement('pre');
   var btn = document.createElement('button');
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
+  element.innerHTML = [
+    'Hello webpack!',
+    '5 cubed is equal to ' + cube(5)
+  ].join('\n\n');
 
   // Add the image to our existing div.
   var myIcon = new Image();
